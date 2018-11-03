@@ -12,22 +12,25 @@
     // Update is called once per frame
     void Update() 
     {
-        //Changing camera transform X axis value to float values that move sliders.
-
+        //Changing camera transform X axis value to float value that move sliders.
+        //If camera angle value is greater than 180 change it so that m_camAngle starts moving from 0 position.
         if (m_camera.eulerAngles.x > 180f)
         {
-            m_camAngle = ((m_camera.eulerAngles.x * -1f)+360f);
+            m_camAngle = (m_camera.eulerAngles.x + 360f);
         }
+
+        //Else if camera angle value is lower or equal than 180.
         else
         {
-            m_camAngle = (m_camera.eulerAngles.x)*-1f;
+            m_camAngle = (m_camera.eulerAngles.x);
         }
             
         //Moving sliders
-        Aoa1Slider.value = -m_camAngle;
-        Aoa2Slider.value = -m_camAngle;
-        //Setting current pitch value
-        m_throwAngle = m_camAngle;
+        Aoa1Slider.value = m_camAngle;
+        Aoa2Slider.value = m_camAngle;
+
+        //Setting current pitch value inverted from camera angle.
+        m_throwAngle = -m_camAngle;
     }
 }
 
