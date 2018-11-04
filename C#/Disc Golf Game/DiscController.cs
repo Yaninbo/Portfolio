@@ -216,7 +216,7 @@
             m_fademultiR = -1f;
 
         }
-        else if ((m_angleofroll > 90f && m_angleofroll < 100f)||( m_angleofroll < -90f && m_angleofroll > -100f))//
+        else if ((m_angleofroll > 90f && m_angleofroll < 100f)||( m_angleofroll < -90f && m_angleofroll > -100f))
         {
             m_speedmultiR = 1f;
             m_heightmultiR = 1f;
